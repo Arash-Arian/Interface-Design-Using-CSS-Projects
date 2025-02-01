@@ -1,0 +1,110 @@
+/*manual reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .8s ease;
+}
+/*4 different fonts for each part of the song*/
+@font-face {
+    font-family: 'MonsieurLaDoulaise';
+    src: url('../fonts/MonsieurLaDoulaise-Regular.ttf');
+}
+@font-face {
+    font-family: 'EBGaramond';
+    src: url('../fonts/EBGaramond-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'DancingScript';
+    src: url('../fonts/DancingScript-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Ephesis';
+    src: url('../fonts/Ephesis-Regular.ttf');
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'MonsieurLaDoulaise', sans-serif;
+    color: #3a3a3a;
+}
+body{
+    background-color: #d9c1a5;
+    >header{
+        width: 100%;
+        text-align: center;
+        border-radius: 0 0 800px 800px;
+        background-color: rgba(244, 244, 244, 0.3);
+        /*hover animation for each line*/
+        :hover{
+            color: #4281bb;
+            cursor: pointer;
+            letter-spacing: 3px;
+        }
+        >h1{
+            font-size: 3em;
+            padding-top: 25px;
+        }
+        >h2{
+            font-size: 2em;
+            padding-top: 10px;
+        }
+    }
+    >main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 140px;
+        padding-top: 30px;
+
+        >div{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #000f26;
+            /*hover animation for each line*/
+            :hover{
+                color: #4281bb;
+                cursor: pointer;
+                letter-spacing: 3px;
+            }
+            >img{
+                width: 400px;
+                border-radius: 10px;
+            }
+        }
+        /*assigning different fonts to divs with classes*/
+        >.verse{
+            font-family: 'EBGaramond', serif;
+            font-size: 1.8em;
+            padding: 20px;
+            text-align: center;
+        }
+        >.pre_chorus{
+            font-family: 'DancingScript', cursive;
+            font-size: 2.2em;
+            font-weight: 800;
+            padding: 20px;
+            text-align: center;
+        }
+        >.chorus{
+            font-family: 'Ephesis', serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #4281bb;
+        }
+    }
+    /*using position: fixed for the embedded spotify player so it always stays at the bottom of the page */
+    >footer{
+        width: 100%;
+        position: fixed;
+        bottom: -5px;
+        >iframe{
+            width: 100%;
+            height: 152px;
+            frameborder: 0;
+        }
+    }
+}
