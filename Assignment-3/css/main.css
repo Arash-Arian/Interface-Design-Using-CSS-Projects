@@ -1,0 +1,412 @@
+/* General CSS reset for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+    font-family: Bangers, sans-serif;
+}
+
+/* Font face for adding the custom font */
+@font-face {
+    font-family: "Bangers";
+    src: url('../fonts/Bangers-Regular.ttf');
+}
+
+/*!!!!!!!!!!!       I used new css nesting, so the validation sites might find parsing errors but the code works just fine      !!!!!!!!!!!!!*/
+
+/* Smooth scroll behavior for the body and html */
+body, html {
+    scroll-behavior: smooth;
+}
+
+/* Button styling */
+button.button {
+    background-color: #210082;
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 15px;
+    letter-spacing: 1px;
+
+    /* Hover effect for buttons */
+    &:hover {
+        background-color: #410C00;
+        color: #ffffff;
+        transform: scale(1.05);
+        box-shadow: #210082 0 0 10px;
+    }
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    background-color: #410C00;
+
+    /* Logo styling within the header */
+    > .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        > a {
+            > img {
+                max-width: 17em;
+                min-width: 3em;
+                padding: 0 .5em;
+            }
+        }
+    }
+}
+
+/* Main content styling */
+main {
+    /* Paragraph styling within main */
+    p {
+        font-size: 1.5em;
+        padding: 35px;
+        border-top: #210082 2px solid;
+        border-bottom: #210082 2px solid;
+        border-radius: 20px;
+        margin: 5px 0;
+        line-height: 29px;
+        letter-spacing: .5px;
+        font-kerning: normal;
+
+        > span {
+            font-weight: bold;
+            color: #210082;
+            font-size: 1.5em;
+            position: relative;
+            top: -20px;
+        }
+    }
+
+    /* Product div styling */
+    div.products {
+        font-size: 1.5em;
+        padding: 25px;
+        border-radius: 20px;
+        margin: 25px 0;
+        line-height: 29px;
+        letter-spacing: 0.5px;
+        font-kerning: normal;
+    }
+
+    /* Parallax section styling */
+    > section.parallax {
+        background-image: none;
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: whitesmoke;
+
+        > p {
+            letter-spacing: 0.5px;
+            font-kerning: normal;
+            background-color: whitesmoke;
+            color: #410C00;
+            width: 80%;
+            border-color: transparent;
+            box-shadow: #210082 0 0 10px;
+            margin-bottom: 100px;
+        }
+
+        > video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        > h1:nth-of-type(1) {
+            font-size: 3.5em;
+            > span {
+                margin: 0 5px;
+            }
+            &:before {
+                content: "WHY?";
+                position: relative;
+                top: -50px;
+                left: 50px;
+                font-size: 0.5em;
+                z-index: -1;
+            }
+        }
+
+        > h1, h2 {
+            padding: 120px 0;
+            font-size: 2.8em;
+            text-align: center;
+            letter-spacing: .5px;
+            font-kerning: normal;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+                transition: 3s letter-spacing ease, 1s color ease;
+                letter-spacing: 5px;
+            }
+
+            > span {
+                font-weight: bold;
+                color: #210082;
+                font-size: 1em;
+            }
+        }
+    }
+
+    /* Specific styling for the first parallax section */
+    > section.parallax:nth-of-type(1) {
+        > h1 {
+            padding: 70px 0;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    /* Specific styling for the second parallax section */
+    > section.parallax:nth-of-type(2) {
+        background-image: url('../images/parallax.jpg');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+
+        > h1 {
+            &:hover > span {
+                opacity: 0;
+            }
+        }
+    }
+
+    /* Content div styling */
+    > div.content {
+        color: #410C00;
+        background-color: #ffffff;
+        padding: 60px 20px;
+        z-index: 1;
+
+        > .separator {
+            margin: 0 auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > div {
+                width: 100%;
+                height: 3px;
+                background-color: #210082;
+                border-radius: 50%;
+            }
+        }
+
+        > div.products {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+
+            > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column nowrap;
+                padding: 20px;
+
+                > img {
+                    max-width: 100%;
+                    min-width: 10em;
+                    padding: 0 0.5em;
+                    margin-bottom: 20px;
+                    border-radius: 20px;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+
+                    &:hover + h2, &:hover + h2 + h3 {
+                        color: #210082;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+        }
+
+        span {
+            font-weight: bold;
+            color: #210082;
+            font-size: 1em;
+        }
+
+        > h2 {
+            font-size: 3.0em;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 40px;
+            letter-spacing: .5px;
+            font-kerning: normal;
+        }
+    }
+
+    /* Specific styling for the second content div */
+    > div.content:nth-of-type(2) {
+        > h2 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    /* Specific styling for the last content div */
+    > div.content:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #410C00;
+
+        > img {
+            max-width: 100%;
+            min-width: 10em;
+            padding: 0 0.5em;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: #210082 5px 5px 10px;
+        }
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #ffffff;
+    color: #410C00;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    overflow: hidden;
+
+    /* Logo styling within the footer */
+    > .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+
+        > a {
+            > img {
+                max-width: 15em;
+                min-width: 3em;
+            }
+        }
+        /*Equal width for all 3 elements of the footer*/
+        width: 33%;
+    }
+
+    /* Separator styling within the footer */
+    > .separator {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > div {
+            width: 3px;
+            height: 70px;
+            background-color: #410C00;
+            border-radius: 50%;
+        }
+    }
+
+    /* Contact form styling within the footer */
+    > form.contact {
+        width: 33%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > input {
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            /*Transparent border so that the transition goes off when changing borders*/
+            border: transparent 2px solid;
+            border-left: #410C00 2px solid;
+            border-right: #410C00 2px solid;
+            color: #210082;
+
+            &:focus {
+                outline: none;
+                border: transparent 2px solid;
+                border-bottom: #210082 2px solid;
+                border-top: #210082 2px solid;
+                background-color: rgba(33, 0, 130, 0.2);
+            }
+        }
+    }
+}
+
+/* Media queries for responsive header */
+@media all and (max-width: 768px) {
+    header {
+        /*Sticky header*/
+        height: 80px;
+        z-index: 500;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        > .logo {
+            > a {
+                > img {
+                    max-width: 12em;
+                    min-width: 3em;
+                    padding: 0 .5em;
+                }
+            }
+        }
+    }
+
+    footer {
+        > .logo {
+            > a {
+                > img {
+                    max-width: 12em;
+                    min-width: 3em;
+                    padding: 0 .5em;
+                }
+            }
+        }
+        /*Changing separator's axis*/
+        > .separator {
+            width: 80%;
+
+            > div {
+                width: 100%;
+                height: 3px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
