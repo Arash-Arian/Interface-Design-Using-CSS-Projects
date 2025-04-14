@@ -1,1 +1,0 @@
-I used the new css nesting, so the validation sites find parsing errors because of that but the code works just fine
