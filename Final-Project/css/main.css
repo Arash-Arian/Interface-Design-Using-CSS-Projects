@@ -1,0 +1,306 @@
+/*general css for all the elements*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+    font-family: Calibri, sans-serif;
+}
+body,html{
+    scroll-behavior: smooth;
+}
+.button{
+    background-color: transparent;
+    color: #FFFFFF;
+    border: #FFFFFF 5px solid;
+    padding: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-kerning: normal;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.7em;
+    margin: 5px;
+    &:hover{
+        background-color: #E60012;
+        color: #FFFFFF;
+        transition: all 0.3s ease;
+        letter-spacing: 3px;
+    }
+}
+/*header css*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    Width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    height: 90px;
+    background-color: #E60012;
+    Z-index: 100;
+
+    > .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+
+        > a {
+            > img {
+                max-width: 12em;
+                min-width: 6em;
+                padding: 0 .5em;
+            }
+        }
+    }
+
+    > nav {
+
+        > ul.menu {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            > li {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                flex: auto;
+                text-align: center;
+                height: inherit;
+                .active{
+                    color: #FFFFFF;
+                    border-bottom-color: #FFFFFF;
+                }
+                > a {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: whitesmoke;
+                    font-weight: bold;
+                    height: inherit;
+                    padding: 0 1.5rem;
+                    font-size: 1.1em;
+                    border-bottom: 3px solid transparent;
+
+                    &:hover {
+                        color: #FFFFFF;
+                        border-bottom-color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+main{
+    h1,h2,h3,h4,h5,h6{
+        /*we use !important to override all other css for that line */
+        font-family: Roboto, sans-serif;!important;
+        font-kerning: normal;
+    }
+
+    /*css for all the sections with parallax background*/
+    section{
+        font-family: Arial, sans-serif;
+    }
+   > section.parallax {
+        background-image: none;
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: whitesmoke;
+       >video{
+           position: fixed;
+           right: 0;
+           top: 0;
+           min-width: 100%;
+           min-height: 100%;
+           z-index: -1;
+       }
+       >h1{
+           font-size: 2.5rem;
+           text-align: center;
+
+       }
+    }
+    .parallax:nth-of-type(1){
+        >h1{
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &:before{
+                content: '';
+                position: absolute;
+                top: 70%;
+                left: 47.5%;
+                width: 20px;
+                height: 20px;
+                border-left: #FFFFFF 5px solid;
+                border-bottom: #FFFFFF 5px solid;
+                background-color: transparent;
+                transform: rotate(-45deg);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            &:hover&:before{
+                top: 100%;
+                opacity: 1;
+
+            }
+        }
+    }
+    .release-section {
+        background-color: #1e1e1e;
+        color: #FFFFFF;
+        padding: 40px 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+
+            .product-card {
+                background: transparent;
+                padding: 20px;
+                border-radius: 12px;
+                max-width: 850px;
+                text-align: left;
+
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    margin-bottom: 15px;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.05);
+                        transition: all .8s ease;
+                    }
+                }
+
+                h3 {
+                    font-size: 1.8em;
+                    margin-bottom: 10px;
+                    color: #FFFFFF;
+                }
+
+                .note {
+                    font-size: 1.2em;
+                    color: #e8e8e8;
+                }
+            }
+        }
+    }
+    .trailer-section {
+        background-color: #b50000;
+        padding: 40px 20px;
+        text-align: center;
+
+        h2 {
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            max-width: 1380px;
+            margin: 0 auto;
+
+            iframe {
+                border: none;
+                width: 100%;
+                height: 800px;
+                border-radius: 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}
+footer {
+    height: 120px;
+    background-color: #E60012;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
+    > p {
+        margin: 0 20px;
+    }
+    > a {
+        background-color: transparent;
+        color: #FFFFFF;
+        border: #FFFFFF 3px solid;
+        padding: 10px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-kerning: normal;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1.3em;
+        margin: 5px;
+        &:hover{
+            background-color: #FFFFFF;
+            color: #E60012;
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+        }
+    }
+}
+/*media queries for responsive header*/
+@media all and (max-width: 768px){
+    header {
+        position: relative;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: unset;
+        >nav{
+            width: 100%;
+            ul.menu{
+                flex-flow: column nowrap;
+                >li{
+                    width: 100%;
+                    >a{
+                        padding: 0.8rem 0;
+                        width: 100%;
+                        &:hover{
+                            letter-spacing: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main{
+        .parallax:nth-of-type(1){
+            >h1{
+                position: absolute;
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
